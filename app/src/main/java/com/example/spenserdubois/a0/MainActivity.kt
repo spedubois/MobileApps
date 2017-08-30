@@ -66,6 +66,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Updates the TextView on the phone so the app shows what the longest word was.
+     *
+     * Input: The String we want to display
+     */
     fun updateTextView(toThis: String) {
         val textView = findViewById(R.id.textView) as TextView
         textView.text = toThis
@@ -176,6 +181,7 @@ class MainActivity : AppCompatActivity() {
 
         //Prints the longest word found in the phrase as an error log.
         Log.e("MainActivity", ""+words.longest)
+        //Updates the text view on the phone
         updateTextView(words.longest)
     }
 }
