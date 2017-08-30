@@ -3,6 +3,9 @@ package com.example.spenserdubois.a0
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
+
+
 
 /**
  * Class that hold the string and splits it into an array in order to check each word.
@@ -63,6 +66,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun updateTextView(toThis: String) {
+        val textView = findViewById(R.id.textView) as TextView
+        textView.text = toThis
+    }
+
     /**
      * Checks to see if a String has an even length
      *
@@ -78,9 +86,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val input: String = "anotHers Using Kotlin for Android Development Kotlin is a  " +
-                "anotHers great fit for developingAndroid applications, bringing all of the advantages of   " +
-                "a modern language to the ThisIsTheLongestbutThereisOnlyONE Android platform without introducing any new restrictions: " +
+        val input: String = "ThisIsTheLongestWordInthePHRASEE anotHers Using Kotlin for Android Development Kotlin is a  " +
+                "anotHers great fit for developing Android applications, bringing all of the advantages of   " +
+                "a modern language to the ThisIsTheLongestWordInthePHRASEE Android platform without introducing any new restrictions: " +
                 "Compatibility: Kotlin is   fully compatible with JDK 6, ensuring that Kotlin applications can run on   " +
                 "older Android devices with no issues. The Kotlin tooling is fully supported in   " +
                 "Android Studio and compatible with the Android build system. " +
@@ -98,14 +106,14 @@ class MainActivity : AppCompatActivity() {
                 "faster than with Java. Learning Curve: For a Java developer,getting started with Kotlin is   " +
                 "very easy. The automated Java to Kotlin converter included in   " +
                 "the Kotlin plugin helps with the first steps. Kotlin Koans offer a  " +
-                "guide through the key features of the language with a  series of interactive exercises. " +
+                "guide through the key features ThisIsTheLongestWordInthePHRASE of the language with a  series of interactive exercises. " +
                 "Kotlin for Android Case Studies Kotlin has been successfully adopted by   major companies, and a   " +
                 "few of them have shared their experiences: ThisTest Pinterest has successfully introduced Kotlin into theirapplication, used by   " +
                 "150M people every month. Basecamp's Android app is 100% Kotlin code, and they report a huge difference in  " +
                 " programmer happiness and great improvements in   work quality and speed. Keepsafe's App Lock app has also been converted to " +
                 "  100% Kotlin, leading to a  30% decrease in source line count and 10% decrease in method count. " +
                 "Tools for Android Development The Kotlin team offers a  set of tools for Android development " +
-                "that goes beyond the standard language features: Kotlin Android Extensionsis a  compiler extension that allows you to  " +
+                "that goes beyond the standard language features: Kotlin Android Extensions is a  compiler extension that allows you to  " +
                 " get rid of findViewById() callsin your code and to replace them with synthetic compiler-generated properties. Anko is a " +
                 " library providing a  set of   Kotlin-friendly wrappers around the Android APIs, as   well as " +
                 "  a  DSL that lets your anotHers replace your layout .xml files with Kotlin code. " +
@@ -168,5 +176,6 @@ class MainActivity : AppCompatActivity() {
 
         //Prints the longest word found in the phrase as an error log.
         Log.e("MainActivity", ""+words.longest)
+        updateTextView(words.longest)
     }
 }
